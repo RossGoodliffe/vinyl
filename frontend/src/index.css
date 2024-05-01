@@ -1,0 +1,332 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  line-height: 1.5;
+
+  background-color: #fff;
+} 
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  all: unset;
+}
+
+
+/* Remove styles from lists with a class */
+ul[class], ol[class], li[class] {
+list-style: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}
+
+header {
+  height: 15vh;
+  overflow: hidden;
+
+  font-family: "Brown-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 16px;
+  /* line-height: 24px; */
+  line-height: 30px;
+  font-style: normal;
+}
+
+/* General Navbar */
+nav {
+  height: 15vh;
+  height: 100%;
+  border-bottom: solid red 1px;
+}
+
+.navlist {
+  display: flex;
+}
+
+.navitem {
+  flex: 1;
+  margin: 10px;
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  /* border: solid blue 1px; */
+}
+
+.navlist img {
+  height: 10vh;
+}
+
+.nav-active {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 12px
+}
+
+/* END General Navbar */
+
+
+
+p {
+  font-family: "Brown-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+
+
+
+
+
+/* Albums grid */
+
+.container {
+  /* max-width: 1800px; */
+  /* width: 100%; */
+  padding: 20px;
+
+  display: flex;
+  align-content: center;
+
+}
+.albums-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.album-item {
+  /* Adjust as needed */
+  /* width: 14.285714285714285714285714285714%; */
+
+  position: relative;
+
+}
+
+.album-image {
+  z-index: 2;
+  /* position: absolute; */
+  transition: transform 0.3s ease-in-out;
+}
+
+.album-image img {
+  width: 100%;
+  height: auto;
+  /* display: block; */
+}
+
+
+.album-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+
+  color:white;
+
+  /* changes per album */
+  background-color: #D3829E;
+
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+
+}
+
+
+.album-text:hover {
+  opacity: 1;
+  transition: .2s ease;
+}
+
+
+
+
+
+
+
+/* Album Page */
+.ap-container {
+  max-width: 1800px;
+  /* width: 100%; */
+
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  align-content: center;
+
+}
+
+.artwork-container {
+
+  width: 25%;
+
+  padding: 20px;
+}
+
+.info {
+  padding: 30px;
+
+  width: 75%;
+
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 20px;
+
+  
+}
+
+.info-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+
+  /* padding: 10px; */
+
+}
+
+h1, h2 {
+  font-family: "Brown-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 16px;
+  /* line-height: 24px; */
+  line-height: 30px;
+  font-style: normal;
+}
+
+.info-desc p {
+  font-family: "Brown-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 4px; */
+  font-size: 14px;
+  /* line-height: 24px; */
+  line-height: 30px;
+  font-style: normal;
+}  
+
+.tracklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.tracklist li {
+  font-family: "Brown-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  font-size: 14px;
+  /* line-height: 24px; */
+  line-height: 30px;
+  font-style: normal;
+}
+
+
+
+/* Screen Breakpoints */
+/* Mobile */
+@media (max-width: 480px) {
+  .album-item {
+      width: 100%; /* Adjust as needed */
+  }
+  .ap-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tracklist {
+    grid-template-columns:1fr;
+  
+  }
+}
+
+/* Extra small devices */
+@media (min-width: 481px) and (max-width: 767px) {
+  .album-item {
+      width: 100%; /* Adjust as needed */
+  }
+  .ap-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tracklist {
+    grid-template-columns:1fr;
+  
+  }
+}
+
+/* Small tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  .album-item {
+      width: 50%; /* Adjust as needed */
+  }
+  .ap-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tracklist {
+    grid-template-columns: 1fr 1fr;
+  
+  }
+}
+
+/* Large tablets/laptops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .album-item {
+      width: 25%; /* Adjust as needed */
+  }
+}
+
+/* Desktops */
+@media (min-width: 1200px) and (max-width: 1919px) {
+
+  .album-item {
+      width: 16.66%; /* Adjust as needed */
+  }
+
+}
+
+/* Extra large screens */
+@media (min-width: 1920px) {
+  .album-item {
+      width: 14.285714285714285714285714285714%; /* Adjust as needed */
+  }
+
+}
+/* END Screen Breakpoints */
